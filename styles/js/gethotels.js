@@ -1,9 +1,23 @@
-const fs = require('fs')
-const fileContents = fs.readFileSync('./inc/rKData.json', 'utf8');
-
-try {
-    const data = JSON.parse(fileContents)
-    console.log(data[2][hotelName])
-} catch (error) {
-    console.log(error)
+$(window).on("load", 
+    $(".hotelList1").css({
+        display: 'block',
+    })
+);
+prev = (target) => {
+    p = target - 1
+    $('.hotelList'+target).css({
+        display: 'none',
+    });
+    $('.hotelList'+p).css({
+        display: 'block',
+    });
+}
+next = (target) => {
+    n = target + 1
+    $('.hotelList'+target).css({
+        display: 'none',
+    });
+    $('.hotelList'+n).css({
+        display: 'block',
+    });
 }
